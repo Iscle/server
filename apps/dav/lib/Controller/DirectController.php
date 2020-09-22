@@ -81,7 +81,7 @@ class DirectController extends OCSController {
 	/**
 	 * @NoAdminRequired
 	 */
-	public function getUrl(int $fileId, int $expirationTime): DataResponse {
+	public function getUrl(int $fileId, int $expirationTime = 60 * 60 * 8): DataResponse {
 		$userFolder = $this->rootFolder->getUserFolder($this->userId);
 
 		$files = $userFolder->getById($fileId);
